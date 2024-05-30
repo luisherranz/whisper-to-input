@@ -1,0 +1,10 @@
+name: Generate apk
+on: [push]
+jobs:
+  Generate-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sparkfabrik/android-build-action@v1.5.0
+        with:
+          project-path: android
+          output-path: whisper-to-input.apk
