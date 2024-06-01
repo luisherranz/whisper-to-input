@@ -8,7 +8,7 @@ jobs:
         with:
           project-path: android
           output-path: whisper-to-input.apk
-          fastlane-version: "2.213.0"
+          fastlane-version: "2.220.0"
           ruby-version: "2.7.5"
           bundler-version: "2.3"
           
