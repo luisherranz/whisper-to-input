@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.whispertoinput"
+    namespace = "com.luisherranz.whispertoinput"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.whispertoinput"
+        applicationId = "com.luisherranz.whispertoinput"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -19,7 +19,7 @@ android {
 
     signingConfigs{
         release{
-          storeFile file("../keystore.jks")
+          storeFile file("./android.keystore")
           storePassword System.getenv("RELEASE_KEYSTORE_PASSWORD")
           keyAlias System.getenv("RELEASE_KEYSTORE_ALIAS")
           keyPassword System.getenv("RELEASE_KEY_PASSWORD")
