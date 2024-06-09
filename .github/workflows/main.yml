@@ -25,7 +25,7 @@ jobs:
 
       - name: Get release file apk path
         id: releaseApk
-        run: echo "apkfile=$(find app/build/outputs/apk/release/*.apk)" >> $GITHUB_OUTPUT
+        run: echo "apkfile=$(find $PWD/android/app/build/outputs/apk/release/*.apk)" >> $GITHUB_OUTPUT
 
       - name: Zip Files
         uses: papeloto/action-zip@v1
