@@ -18,7 +18,7 @@ jobs:
         uses: android-actions/setup-android@v2.0.10
 
       - name: Build Release bundle
-        run: ./gradlew bundleRelease --stacktrace
+        run: ./android/gradlew bundleRelease --stacktrace
 
       - name: Get release file apk path
         id: releaseApk
