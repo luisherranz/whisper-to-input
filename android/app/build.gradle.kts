@@ -17,18 +17,18 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs{
-        release{
-          storeFile file("../../../keystore.jks")
-          storePassword System.getenv("RELEASE_KEYSTORE_PASSWORD")
-          keyAlias System.getenv("RELEASE_KEYSTORE_ALIAS")
-          keyPassword System.getenv("RELEASE_KEY_PASSWORD")
+    signingConfigs {
+        create("release") {
+            storeFile = file("../../../keystore.jks")
+            storePassword = System.getenv("RELEASE_KEYSTORE_PASSWORD")
+            keyAlias = System.getenv("RELEASE_KEYSTORE_ALIAS")
+            keyPassword = System.getenv("RELEASE_KEY_PASSWORD")
         }
     }
 
     buildTypes {
-        release {
-            signingConfig signingConfigs.release
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -36,6 +36,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
